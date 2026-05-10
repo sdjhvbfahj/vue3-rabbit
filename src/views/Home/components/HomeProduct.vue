@@ -2,6 +2,7 @@
     <div class="HomeProduct" v-for="item in goodsList" :key="item.id">
         <div class="wrapper">
             <HomeProductPanel :title="item.name" :category="item.children">
+                <!-- 默认插槽 -->
                 
             </HomeProductPanel>
         </div>
@@ -16,7 +17,7 @@
     let goodsList = ref<GoodsCategoryItem[]>([]);
     async function getGoods() {
         const result = await getGoodsAPI() as any;
-        goodsList = result.result;
+        goodsList.value = result.result;
     }
     onMounted(() => {
         getGoods();

@@ -19,7 +19,9 @@
                 </ul>
             </div>
         </div>
-        <div class="bottom"></div>
+        <div class="bottom">
+            <slot></slot>
+        </div>
     </div>
 </template>
 
