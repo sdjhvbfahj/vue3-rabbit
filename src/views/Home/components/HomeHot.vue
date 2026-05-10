@@ -4,7 +4,7 @@
             <ul>
                 <li v-for="item in hotList" :key="item.id">
                     <RouterLink to="/">
-                        <img :src="item.picture">
+                        <img v-img-lazy="item.picture">
                         <h3>{{ item.title }}</h3>
                         <p>{{ item.alt }}</p>
                     </RouterLink>
@@ -23,7 +23,6 @@
     async function getNew() {
         const result = await getHotAPI() as any;
         hotList.value = result.result;
-        console.log(hotList)
     }
     onMounted(() => {
         getNew();
