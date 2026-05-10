@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts" name="HomeBanner">
-    import {getBannerAPI, type BannerItem} from '@/apis/banner.ts'
+    import {getBannerAPI, type BannerItem} from '@/apis/home.ts'
     import {ref, onMounted} from 'vue'
     let bannerList = ref<BannerItem[]>([]);
     // 封装获取banner数据函数

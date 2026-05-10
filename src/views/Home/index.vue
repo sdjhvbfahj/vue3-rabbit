@@ -4,8 +4,8 @@
         <HomeBanner/>
     </div>
     <HomeProduct/>
-    <HomeHot/>
     <HomeNew/>
+    <HomeHot/>
 </template>
 
 <script setup lang="ts" name="Home">
