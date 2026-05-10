@@ -49,3 +49,34 @@ export interface HotItem {
     picture: string,
     alt: string
 }
+
+/**
+ * @description: 获取所有商品模块
+ * @param {*}
+ * @return {*}
+ */
+export function getGoodsAPI() {
+    return httpInstance({
+        url: '/home/goods',
+        method: 'GET'
+    });
+}
+interface GoodsChildrenItem {
+    id: string,
+    name: string
+}
+interface GoodsGoodsItem {
+    id: string,
+    name: string,
+    desc: string,
+    price: string,
+    picture: string,
+    orderNum: number
+}
+export interface GoodsCategoryItem {
+    id: string,
+    name: string,
+    picture: string,
+    children: GoodsChildrenItem[],
+    goods: GoodsGoodsItem[]
+}

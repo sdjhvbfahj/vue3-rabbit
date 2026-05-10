@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts" name="HomeNew">
-    import HomePanel from './HomePanel.vue'
+    import HomePanel from './HomeNewPanel.vue'
     import {getNewAPI, type NewItem} from '@/apis/home.ts'
     import {ref, onMounted} from 'vue'
     // 定义用来存放新鲜好物数据的变量

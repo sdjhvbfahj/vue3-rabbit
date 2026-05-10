@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts" name="HomeHot">
-    import HomePanel from './HomePanel.vue'
+    import HomePanel from './HomeNewPanel.vue'
     import {getHotAPI, type HotItem} from '@/apis/home.ts'
     import {ref, onMounted} from 'vue'
     // 定义用来存放人气推荐数据的变量

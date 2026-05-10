@@ -3,9 +3,9 @@
         <HomeCategory/>
         <HomeBanner/>
     </div>
-    <HomeProduct/>
     <HomeNew/>
     <HomeHot/>
+    <HomeProduct/>
 </template>
 
 <script setup lang="ts" name="Home">
