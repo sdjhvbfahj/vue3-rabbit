@@ -9,9 +9,9 @@
 </template>
 
 <script setup lang="ts" name="LayoutHeaderUI">
-    import { useCategoryStore } from '@/stores/categoryStore.ts';
+    import { useCategoryStore } from '@/stores/categoryStore.ts'
     // 可以直接获取pinia中暴露出来的数据(index.vue文件已经初始化数据了)
-    const categoryStore = useCategoryStore()
+    const categoryStore = useCategoryStore();
 </script>
 
 <style scoped lang="scss">

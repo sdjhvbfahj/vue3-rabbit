@@ -7,7 +7,23 @@ export function getCategoryAPI() {
     });
 }
 // 定义接口, 限制返回数据的类型(只返回首页所需要的分类类别)
+// 定义返回的children数据接口
+interface ChildrenItem {
+    id: string,
+    name: string,
+    picture: string
+}
+interface GoodsItem {
+    id: string,
+    name: string,
+    picture: string,
+    price: string,
+    desc: string
+}
 export interface CategroyItem {
     id: string,
     name: string
+    picture: string,
+    children: ChildrenItem[],
+    goods: GoodsItem[]
 }

@@ -27,6 +27,7 @@
 
 <style scoped lang="scss">
     .LayoutFixed {
+        z-index: 999;
         background-color: #fff;
         // 设置位置模式为fixed, 初始位置为top: -100px;
         position: fixed;

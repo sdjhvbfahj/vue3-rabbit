@@ -2,7 +2,6 @@
     <LayoutNav/>
     <LayoutHeader/>
     <LayoutFixed/>
-    <div style="height: 1400px"></div>
     <RouterView></RouterView>
     <LayoutFooter/>
 </template>
