@@ -1,5 +1,5 @@
 <template>
-    <div class="HomeCategory wrapper">
+    <div class="HomeCategory">
         <div class="category">
             <ul>
                 <li v-for="item in categoryStore.categoryList" :key="item.id">
@@ -12,7 +12,7 @@
                         </span>
                         <div class="goods">
                             <RouterLink to="/" v-for="goods in item.goods.slice(0,9)" :key="goods.id">
-                                <img :src=goods.picture>
+                                <img :src="goods.picture">
                                 <div class="goodsContent">
                                     <h5>{{ goods.name }}</h5>
                                     <p class="desc">{{ goods.desc }}</p>
@@ -30,19 +30,16 @@
 <script setup lang="ts" name="HomeCategory">
     import {useCategoryStore} from '@/stores/categoryStore.ts'
     const categoryStore = useCategoryStore();
-    console.log(categoryStore.categoryList)
 </script>
 
 <style scoped lang="scss">
-    .wrapper {
-        width: 1240px;
-        margin: 0px auto;
-        height: 100%;
-    }
     .HomeCategory {
+        position: relative;
+        z-index: 2;
         height: 500px;
+        width: 250px;
         .category {
-            width: 250px;
+            width: 100%;
             height: 100%;
             ul {
                 position: relative;

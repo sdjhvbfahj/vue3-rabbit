@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container wrapper">
         <HomeCategory/>
         <HomeBanner/>
     </div>
@@ -17,5 +17,11 @@
 </script>
 
 <style scoped lang="scss">
-
+    .wrapper {
+            width: 1240px;
+            margin: 0px auto;
+        }
+    .container {
+        position: relative;
+    }
 </style>
