@@ -20,6 +20,7 @@
             </div>
         </div>
         <div class="bottom">
+            <!-- 使用默认插槽呈现具体内容 -->
             <slot></slot>
         </div>
     </div>
