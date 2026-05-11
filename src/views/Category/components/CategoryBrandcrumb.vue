@@ -13,5 +13,7 @@
 </script>
 
 <style scoped lang="scss">
-
+    .CategoryBrandcrumb {
+        margin: 25px 7px;
+    }
 </style>

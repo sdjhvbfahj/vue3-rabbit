@@ -1,6 +1,9 @@
 <template>
     <div class="Category wrapper">
         <CategoryBrandcrumb :category="category.name"/>
+        <div class="banner">
+            <CategoryBanner/>
+        </div>
     </div>
 </template>
 
@@ -10,6 +13,7 @@
     import {ref, onMounted, onBeforeUpdate} from 'vue'
 
     import CategoryBrandcrumb from './components/CategoryBrandcrumb.vue'
+    import CategoryBanner from './components/CategoryBanner.vue'
 
     let category = ref<CategoryItem>({} as CategoryItem);
     // 拿到当前页面的路由信息
@@ -31,5 +35,12 @@
     .wrapper {
         width: 1240px;
         margin: 0px auto;
+    }
+    .Category {
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 500px;
+        }
     }
 </style>
