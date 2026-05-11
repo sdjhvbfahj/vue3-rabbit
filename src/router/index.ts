@@ -6,6 +6,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 const Layout = () => import('@/views/Layout/index.vue');
 const Login = () => import('@/views/Login/index.vue');
 const Home = () => import('@/views/Home/index.vue');
+const Category = () => import('@/views/Category/index.vue');
 
 const router = createRouter({
   history: createWebHistory(),
@@ -21,6 +22,12 @@ const router = createRouter({
           name: 'Home',
           path: '',
           component: Home
+        },
+        // 分类商品页面
+        {
+          name: 'Category',
+          path: '/category/:id',
+          component: Category
         }
       ]
     },
