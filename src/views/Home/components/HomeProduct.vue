@@ -12,16 +12,7 @@
                     <div class="right">
                         <ul>
                             <li v-for="goods in item.goods" :key="goods.id">
-                                <RouterLink to="/">
-                                    <div class="pic">
-                                        <img v-img-lazy="goods.picture">
-                                    </div>
-                                    <div class="info">
-                                        <h4>{{ goods.name }}</h4>
-                                        <p>{{ goods.desc }}</p>
-                                    </div>
-                                    <p class="price">¥ <span>{{ goods.price }}</span></p>
-                                </RouterLink>
+                                <GoodsItem :goods/>
                                 <!-- 鼠标悬停出现的更多宝贝的提示页面 -->
                                 <div class="cover">
                                     <RouterLink to="/">
@@ -41,6 +32,7 @@
 
 <script setup lang="ts" name="HomeProduct">
     import HomeProductPanel from './HomeProductPanel.vue'
+    import GoodsItem from './GoodsItem.vue'
     import {getGoodsAPI, type GoodsCategoryItem} from '@/apis/home.ts'
     import {ref, onMounted} from 'vue'
     // 定义ref数据, 用于接收goods数据
@@ -96,43 +88,6 @@
                         width: 242px;
                         height: 300px;
                         transition: all 0.5s;
-                        a {
-                            display: block;
-                            width: 200px;
-                            height: 100%;
-                            img {
-                                width: 200px;
-                                height: 171px;
-                            }
-                            .info {
-                                display: flex;
-                                flex-direction: column;
-                                justify-content: space-evenly;
-                                margin-top: 10px;
-                                width: 100%;
-                                height: 70px;
-                                h4 {
-                                    font-size: 16px;
-                                    line-height: 19px;
-                                    font-weight: 400;
-                                }
-                                p {
-                                    white-space: nowrap;
-                                    text-overflow: ellipsis;
-                                    overflow: hidden;
-                                    font-size: 16px;
-                                    line-height: 19px;
-                                    margin-top: 5px;
-                                }
-                            }
-                            .price {
-                                color: $priceColor;
-                                font-size: 20px;
-                                span {
-                                    font-size: 22px;
-                                }
-                            }
-                        }
                         .cover {
                             position: absolute;
                             left: 0px;
