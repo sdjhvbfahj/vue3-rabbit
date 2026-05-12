@@ -4,7 +4,7 @@
         <ul>
             <!-- 遍历全部分类 -->
             <li v-for="item in secondCategory" :key="item.id">
-                <RouterLink to="/">
+                <RouterLink :to="`/category/sub/${item.id}`">
                     <img :src="item.picture">
                     <h3>{{item.name}}</h3>
                 </RouterLink>

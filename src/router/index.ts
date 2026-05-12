@@ -7,6 +7,7 @@ const Layout = () => import('@/views/Layout/index.vue');
 const Login = () => import('@/views/Login/index.vue');
 const Home = () => import('@/views/Home/index.vue');
 const Category = () => import('@/views/Category/index.vue');
+const SubCategory = () => import('@/views/SubCategory/index.vue');
 
 const router = createRouter({
   history: createWebHistory(),
@@ -28,6 +29,12 @@ const router = createRouter({
           name: 'Category',
           path: '/category/:id',
           component: Category
+        },
+        // 二级分类商品页面
+        {
+          name: 'SubCategory',
+          path: '/category/sub/:id',
+          component: SubCategory
         }
       ]
     },

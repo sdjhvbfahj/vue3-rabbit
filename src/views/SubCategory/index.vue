@@ -1,0 +1,18 @@
+<template>
+    <div class="SubCategory wrapper">
+        <SubCategoryBrandcrumb/>
+        <SubCategoryGoods/>
+    </div>
+</template>
+
+<script setup lang="ts" name="SubCategory">
+    import SubCategoryBrandcrumb from './components/SubCategoryBrandcrumb.vue'
+    import SubCategoryGoods from './components/SubCategoryGoods.vue'
+</script>
+
+<style scoped lang="scss">
+    .wrapper {
+        width: 1240px;
+        margin: 0px auto;
+    }
+</style>
