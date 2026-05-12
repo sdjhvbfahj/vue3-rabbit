@@ -134,10 +134,6 @@
                         box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.2);
                     }
                 }
-                :deep(a img) {
-                    width: 160px;
-                    height: 160px;
-                }
                 :deep(a .info h4) {
                     white-space: nowrap;
                     text-overflow: ellipsis;

@@ -23,9 +23,14 @@
         display: block;
         width: 100%;
         height: 100%;
-        img {
-            width: 200px;
-            height: 171px;
+        .pic {
+            display: flex;
+            justify-content: center;
+            img {
+                width: 160px;
+                height: 160px;
+                background: transparent;
+            }
         }
         .info {
             display: flex;
