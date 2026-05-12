@@ -2,6 +2,8 @@
     <LayoutNav/>
     <LayoutHeader/>
     <LayoutFixed/>
+    <!-- 传递一个key值，路由更新时先销毁再创建 -->
+    <!-- <RouterView :key="$route.fullPath"></RouterView> -->
     <RouterView></RouterView>
     <LayoutFooter/>
 </template>
