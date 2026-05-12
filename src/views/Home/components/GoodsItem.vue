@@ -7,7 +7,7 @@
             <h4>{{ goods.name }}</h4>
             <p>{{ goods.desc }}</p>
         </div>
-        <p class="price">¥ <span>{{ goods.price }}</span></p>
+        <p class="price">¥<span>{{ goods.price }}</span></p>
     </RouterLink>
 </template>
 
@@ -46,6 +46,7 @@
                 font-size: 16px;
                 line-height: 19px;
                 margin-top: 5px;
+                color: #666;
             }
         }
         .price {

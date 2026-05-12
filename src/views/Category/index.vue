@@ -4,16 +4,20 @@
         <div class="banner">
             <CategoryBanner/>
         </div>
+        <div class="goods">
+            <CategoryGoods :secondCategory="category.children"/>
+        </div>
     </div>
 </template>
 
 <script setup lang="ts" name="Category">
     import {getCategoryAPI, type CategoryItem} from '@/apis/category.ts'
     import {useRoute} from 'vue-router'
-    import {ref, onMounted, onBeforeUpdate} from 'vue'
+    import {ref, onMounted, watch} from 'vue'
 
     import CategoryBrandcrumb from './components/CategoryBrandcrumb.vue'
     import CategoryBanner from './components/CategoryBanner.vue'
+    import CategoryGoods from './components/CategoryGoods.vue'
 
     let category = ref<CategoryItem>({} as CategoryItem);
     // 拿到当前页面的路由信息
@@ -22,12 +26,16 @@
     async function getCategory(id:string) {
         const result = await getCategoryAPI(id) as any;
         category.value = result.result;
+        console.log(category.value)
     }
     onMounted(() => {
         getCategory(route.params.id as string);
     });
-    onBeforeUpdate(() => {
-        getCategory(route.params.id as string);
+    // 监听路由id的变化
+    watch(() => route.params.id, (newValue) => {
+        if(newValue) {
+            getCategory(newValue as string);
+        }
     });
 </script>
 

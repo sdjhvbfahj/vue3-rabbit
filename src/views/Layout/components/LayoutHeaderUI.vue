@@ -6,7 +6,7 @@
                 <RouterLink to="/">首页</RouterLink>
             </li>
             <li v-for="item in categoryStore.categoryList" :key="item.id">
-                <RouterLink :to="`/category/${item.id}`">{{ item.name }}</RouterLink>
+                <RouterLink active-class="active" :to="`/category/${item.id}`">{{ item.name }}</RouterLink>
             </li>
         </ul>
     </div>
@@ -34,6 +34,10 @@
         font-size: 16px;
         height: 32px;
         line-height: 32px;
+        &.active {
+            color: $sucColor;
+            border-bottom: 1px solid $sucColor;
+        }
     }
     .nav ul li a:hover {
         color: $sucColor;

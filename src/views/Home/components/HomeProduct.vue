@@ -40,7 +40,6 @@
     async function getGoods() {
         const result = await getGoodsAPI() as any;
         goodsList.value = result.result;
-        console.log(goodsList.value)
     }
     onMounted(() => {
         getGoods();

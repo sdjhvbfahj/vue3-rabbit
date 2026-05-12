@@ -82,6 +82,7 @@
 
 <style scoped lang="scss">
     .LayoutFooter {
+        margin-top: 20px;
         height: 638px;
         width: 100%;
     }
