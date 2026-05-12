@@ -1,6 +1,6 @@
 <template>
     <div class="SubCategory wrapper">
-        <SubCategoryBrandcrumb/>
+        <SubCategoryBrandcrumb :parentName="subCategoryList.parentName" :parentId="subCategoryList.parentId" :name="subCategoryList.name"/>
         <SubCategoryGoods/>
     </div>
 </template>
@@ -8,6 +8,9 @@
 <script setup lang="ts" name="SubCategory">
     import SubCategoryBrandcrumb from './components/SubCategoryBrandcrumb.vue'
     import SubCategoryGoods from './components/SubCategoryGoods.vue'
+    import {useSubCategory} from './composables/useSubCategory.ts'
+    
+    const {subCategoryList} = useSubCategory();
 </script>
 
 <style scoped lang="scss">

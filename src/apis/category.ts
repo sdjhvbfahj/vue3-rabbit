@@ -1,8 +1,8 @@
 import httpInstance from "@/utils/http.ts"
 
 /**
- * @description: 获取二级分类列表
- * @param {*}
+ * @description: 获取一级分类列表
+ * @param {*} id 分类id
  * @return {*}
  */
 export function getCategoryAPI(id:string) {
