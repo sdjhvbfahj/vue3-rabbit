@@ -5,7 +5,8 @@
             <el-tab-pane label="最高人气" name="orderNum"></el-tab-pane>
             <el-tab-pane label="评论最多" name="evaluateNum"></el-tab-pane>
         </el-tabs>
-        <div class="goods">
+        <!-- 无线加载v-infinite-scroll -->
+        <div class="goods" v-infinite-scroll="road" :infinite-scroll-disabled="disabled">
             <ul>
                 <li v-for="item in subCategoryList.items" :key="item.id">
                     <GoodsItem :goods="item"/>
@@ -14,11 +15,14 @@
         </div>
     </div>
 </template>
-subCategoryList
+
 <script setup lang="ts" name="SubCategoryGoods">
     import GoodsItem from '@/views/Home/components/GoodsItem.vue'
     import {useSubCategoryStore} from '@/stores/subCategoryStore.ts'
     import {storeToRefs} from 'pinia'
+    import {getSubCategoryAPI} from '@/apis/subCategory.ts'
+    import {ref} from 'vue'
+    const disabled = ref(false);
     const SubCategoryStore = useSubCategoryStore();
     const {subCategoryList, requestData} = storeToRefs(SubCategoryStore);
     function tabChange() {
@@ -26,6 +30,14 @@ subCategoryList
         requestData.value.page = 1; 
         // 渲染新数据到页面
         SubCategoryStore.getSubCategory();
+    }
+    async function road() {
+        requestData.value.page++;
+        const result = await getSubCategoryAPI(requestData.value) as any;
+        if(result.result.page >= result.result.pages) {
+            disabled.value = true;
+        }
+        subCategoryList.value.items = [...subCategoryList.value.items || [], ...result.result.items];
     }
 </script>
 
@@ -44,9 +56,10 @@ subCategoryList
             margin-top: 20px;
             ul {
                 display: flex;
-                justify-content: space-between;
+                justify-content: flex-start;
                 flex-wrap: wrap;
                 li {
+                    margin: 0px 9px;
                     width: 220px;
                     height: 300px;
                     :deep(a) {
