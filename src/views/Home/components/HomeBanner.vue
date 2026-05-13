@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts" name="HomeBanner">
-    import Banner from '@/components/common/Banner.vue'
+    import Banner from '@/components/Banner.vue'
     import {onMounted} from 'vue'
     import {useBanner} from '@/composables/useBanner.ts'
     const {bannerList, getBanner} = useBanner();

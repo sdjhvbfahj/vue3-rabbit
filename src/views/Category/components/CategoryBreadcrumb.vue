@@ -7,7 +7,7 @@
     </div>
 </template>
 
-<script setup lang="ts" name="CategoryBrandcrumb">
+<script setup lang="ts" name="CategoryBreadcrumb">
     import {ArrowRight} from '@element-plus/icons-vue'
     defineProps(['category']);
 </script>

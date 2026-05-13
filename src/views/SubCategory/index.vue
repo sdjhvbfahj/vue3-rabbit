@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts" name="SubCategory">
-    import SubCategoryBrandcrumb from './components/SubCategoryBrandcrumb.vue'
+    import SubCategoryBrandcrumb from './components/SubCategoryBreadcrumb.vue'
     import SubCategoryGoods from './components/SubCategoryGoods.vue'
     import {useSubCategory} from './composables/useSubCategory.ts'
     

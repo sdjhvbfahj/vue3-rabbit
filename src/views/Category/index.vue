@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts" name="Category">
-    import CategoryBrandcrumb from './components/CategoryBrandcrumb.vue'
+    import CategoryBrandcrumb from './components/CategoryBreadcrumb.vue'
     import CategoryBanner from './components/CategoryBanner.vue'
     import CategoryGoods from './components/CategoryGoods.vue'
     import {useCategory} from './composables/useCategory.ts'

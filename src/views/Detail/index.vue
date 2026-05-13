@@ -1,16 +1,7 @@
 <template>
     <div class="xtx-goods-page">
         <div class="container">
-            <div class="bread-container">
-                <el-breadcrumb separator=">">
-                    <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-                    <el-breadcrumb-item :to="{ path: '/' }">母婴
-                    </el-breadcrumb-item>
-                    <el-breadcrumb-item :to="{ path: '/' }">跑步鞋
-                    </el-breadcrumb-item>
-                    <el-breadcrumb-item>抓绒保暖，毛毛虫子儿童运动鞋</el-breadcrumb-item>
-                </el-breadcrumb>
-            </div>
+            <DetailBreadcrumb :detailList/>
             <!-- 商品信息 -->
             <div class="info-container">
                 <div>
@@ -110,7 +101,9 @@
 </template>
 
 <script setup lang="ts" name="Detail">
-
+    import DetailBreadcrumb from './components/DetailBreadcrumb.vue'
+    import {useDetail} from './composables/useDetail.ts'
+    const {detailList} = useDetail();
 </script>
 
 <style scoped lang='scss'>
@@ -307,8 +300,5 @@
 }
 .btn {
     margin-top: 20px;
-}
-.bread-container {
-    padding: 25px 0;
 }
 </style>

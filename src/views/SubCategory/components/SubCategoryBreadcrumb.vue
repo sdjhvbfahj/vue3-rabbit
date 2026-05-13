@@ -8,7 +8,7 @@
     </div>
 </template>
 
-<script setup lang="ts" name="SubCategoryBrandcrumb">
+<script setup lang="ts" name="SubCategoryBreadcrumb">
     import {ArrowRight} from '@element-plus/icons-vue'
     import {useSubCategoryStore} from '@/stores/subCategoryStore.ts'
     import {storeToRefs} from 'pinia'
