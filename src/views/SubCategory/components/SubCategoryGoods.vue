@@ -1,25 +1,32 @@
 <template>
     <div class="SubCategoryGoods">
-        <el-tabs v-model="activeName" class="demo-tabs">
-            <el-tab-pane label="最新商品" name="first"></el-tab-pane>
-            <el-tab-pane label="最高人气" name="second"></el-tab-pane>
-            <el-tab-pane label="评论最多" name="third"></el-tab-pane>
+        <el-tabs v-model="requestData.sortField" class="demo-tabs" @tab-change="tabChange">
+            <el-tab-pane label="最新商品" name="publishTime"></el-tab-pane>
+            <el-tab-pane label="最高人气" name="orderNum"></el-tab-pane>
+            <el-tab-pane label="评论最多" name="evaluateNum"></el-tab-pane>
         </el-tabs>
         <div class="goods">
             <ul>
-                <li v-for="item in goods" :key="item.id">
+                <li v-for="item in subCategoryList.items" :key="item.id">
                     <GoodsItem :goods="item"/>
                 </li>
             </ul>
         </div>
     </div>
 </template>
-
+subCategoryList
 <script setup lang="ts" name="SubCategoryGoods">
-    import { ref } from 'vue'
     import GoodsItem from '@/views/Home/components/GoodsItem.vue'
-    defineProps(['goods']);
-    const activeName = ref('first');
+    import {useSubCategoryStore} from '@/stores/subCategoryStore.ts'
+    import {storeToRefs} from 'pinia'
+    const SubCategoryStore = useSubCategoryStore();
+    const {subCategoryList, requestData} = storeToRefs(SubCategoryStore);
+    function tabChange() {
+        // 切换排序以后重置页数
+        requestData.value.page = 1; 
+        // 渲染新数据到页面
+        SubCategoryStore.getSubCategory();
+    }
 </script>
 
 <style scoped lang="scss">

@@ -1,7 +1,7 @@
 <template>
     <div class="SubCategory wrapper">
-        <SubCategoryBrandcrumb :parentName="subCategoryFilterList.parentName" :parentId="subCategoryFilterList.parentId" :name="subCategoryFilterList.name"/>
-        <SubCategoryGoods :goods="subCategoryList.items"/>
+        <SubCategoryBrandcrumb/>
+        <SubCategoryGoods/>
     </div>
 </template>
 
@@ -10,7 +10,7 @@
     import SubCategoryGoods from './components/SubCategoryGoods.vue'
     import {useSubCategory} from './composables/useSubCategory.ts'
     
-    const {subCategoryFilterList, subCategoryList} = useSubCategory();
+    useSubCategory();
 </script>
 
 <style scoped lang="scss">
