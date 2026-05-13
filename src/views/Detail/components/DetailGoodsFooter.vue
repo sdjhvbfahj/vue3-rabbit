@@ -21,12 +21,16 @@
         </div>
         <!-- 24热榜+专题推荐 -->
         <div class="goods-aside">
-
+            <!-- 24小时热销榜 -->
+            <DetailHot :type="1"/>
+            <!-- 周热销榜 -->
+            <DetailHot :type="2"/>
         </div>
     </div>
 </template>
 
-<script setup lang="ts" name="DetailGoodsFooter"> 
+<script setup lang="ts" name="DetailGoodsFooter">
+    import DetailHot from './DetailHot.vue'
     defineProps(['detailList']);
 </script>
 

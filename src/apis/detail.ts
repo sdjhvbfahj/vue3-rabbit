@@ -1,7 +1,7 @@
 import httpInstance from "@/utils/http.ts"
 
 /**
- * @description: 获取一级分类列表
+ * @description: 获取详情信息
  * @param {*}
  * @return {*}
  */
@@ -52,4 +52,30 @@ export interface DetailItem {
     salesCount: number,
     commentCount: number,
     collectCount: number,
+}
+
+/**
+ * @description: 获取热榜商品
+ * @param {Number} id - 商品id
+ * @param {Number} type - 1代表24小时热销榜 2代表周热销榜
+ * @param {Number} limit - 获取个数
+ */
+interface HotParamsItem {
+    id: string,
+    type: number,
+    limit: number
+}
+export function fetchHotGoodsAPI(paramsData: HotParamsItem) {
+    return httpInstance({
+        url: '/goods/hot',
+        method: 'GET',
+        params: paramsData
+    });
+}
+export interface HotGoodsItem {
+    id: string,
+    name: string,
+    desc: string,
+    price: string,
+    picture: string
 }
