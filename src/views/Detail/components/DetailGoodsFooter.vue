@@ -9,7 +9,7 @@
                 <div class="goods-detail">
                     <!-- 属性 -->
                     <ul class="attrs">
-                        <li v-for="item in detailList.details?.properties" :key="item">
+                        <li v-for="item in detailList.details?.properties" :key="item.name">
                             <span class="dt">{{ item.name }}</span>
                             <span class="dd">{{ item.value }}</span>
                         </li>
