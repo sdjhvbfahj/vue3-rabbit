@@ -44,7 +44,14 @@ const router = createRouter({
       path: '/login',
       component: Login
     }
-  ]
+  ],
+  // 定制路由滚动行为
+  scrollBehavior() {
+    return {
+      // 每次路由跳转都会回到顶部
+      top: 0
+    }
+  }
 });
 
 export default router
