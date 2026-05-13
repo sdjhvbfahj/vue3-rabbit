@@ -22,7 +22,8 @@
                 </li>
                 <li>
                     <p>品牌信息</p>
-                    <p>{{ detailList.brand?.name }}</p>
+                    <!-- 使用??代替||, 不仅可以判断undefined和null, 还可以判断空字符串 -->
+                    <p>{{ detailList.brand?.name ?? '空'}}</p>
                     <p><i class="iconfont icon-dynamic-filling"></i>品牌主页</p>
                 </li>
             </ul>
