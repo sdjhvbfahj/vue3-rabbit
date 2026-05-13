@@ -44,8 +44,12 @@ export interface DetailItem {
     id: string,
     name: string,
     price: string,
+    oldPrice: string,
     brand: DetailBrandItem,
     categories: DetailCategoriesItem[],
     hotByDay:DetailHotByDayItem[],
-    details: DetailDetailsItem
+    details: DetailDetailsItem,
+    salesCount: number,
+    commentCount: number,
+    collectCount: number,
 }
